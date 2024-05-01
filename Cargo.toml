@@ -1,0 +1,15 @@
+[package]
+name = "aoc-2016"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "day-1a"
+path = "day-1a/main.rs"
+
+[[bin]]
+name = "day-1b"
+path = "day-1b/main.rs"
+
+[dependencies]
+itertools = "0.12.1"
