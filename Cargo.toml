@@ -11,5 +11,14 @@ path = "day-1a/main.rs"
 name = "day-1b"
 path = "day-1b/main.rs"
 
+[[bin]]
+name = "day-2a"
+path = "day-2a/main.rs"
+
+[[bin]]
+name = "day-2b"
+path = "day-2b/main.rs"
+
 [dependencies]
 itertools = "0.12.1"
+regex = "1.10.4"
