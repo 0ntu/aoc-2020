@@ -1,5 +1,5 @@
 [package]
-name = "aoc-2016"
+name = "aoc-2020"
 version = "0.1.0"
 edition = "2021"
 
@@ -18,6 +18,22 @@ path = "day-2a/main.rs"
 [[bin]]
 name = "day-2b"
 path = "day-2b/main.rs"
+
+[[bin]]
+name = "day-3a"
+path = "day-3a/main.rs"
+
+[[bin]]
+name = "day-3b"
+path = "day-3b/main.rs"
+
+[[bin]]
+name = "day-4a"
+path = "day-4a/main.rs"
+
+[[bin]]
+name = "day-4b"
+path = "day-4b/main.rs"
 
 [dependencies]
 itertools = "0.12.1"
