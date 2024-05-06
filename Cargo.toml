@@ -35,6 +35,38 @@ path = "day-4a/main.rs"
 name = "day-4b"
 path = "day-4b/main.rs"
 
+[[bin]]
+name = "day-5a"
+path = "day-5a/main.rs"
+
+[[bin]]
+name = "day-5b"
+path = "day-5b/main.rs"
+
+[[bin]]
+name = "day-6a"
+path = "day-6a/main.rs"
+
+[[bin]]
+name = "day-6b"
+path = "day-6b/main.rs"
+
+[[bin]]
+name = "day-7a"
+path = "day-7a/main.rs"
+
+[[bin]]
+name = "day-7b"
+path = "day-7b/main.rs"
+
+[[bin]]
+name = "day-8a"
+path = "day-8a/main.rs"
+
+[[bin]]
+name = "day-8b"
+path = "day-8b/main.rs"
+
 [dependencies]
 itertools = "0.12.1"
 regex = "1.10.4"
