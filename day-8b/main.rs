@@ -1,11 +1,13 @@
-use std::fs;
+use std::{cell::RefCell, fs};
 
+#[derive(Clone)]
 enum Cmd {
     Nop,
     Acc,
     Jmp,
 }
 
+#[derive(Clone)]
 struct Instruction {
     cmd: Cmd,
     val: i32,
@@ -23,7 +25,8 @@ impl Instruction {
 
 fn main() {
     let contents = fs::read_to_string("puzzle-input/day-8.txt").unwrap();
-    let mut instructions = contents
+
+    let instructions = contents
         .lines()
         .map(|s| {
             let args = s.split_ascii_whitespace().collect::<Vec<_>>();
@@ -41,14 +44,17 @@ fn main() {
         })
         .collect::<Vec<_>>();
 
-    let mut possible_corrupted = instructions
+    let possible_corrupted = instructions
         .iter()
-        .filter(|istr| matches!(istr.cmd, Cmd::Nop) || matches!(istr.cmd, Cmd::Jmp));
+        .enumerate()
+        .filter(|x| matches!(x.1.cmd, Cmd::Nop) || matches!(x.1.cmd, Cmd::Jmp));
 
     for corrupted in possible_corrupted {
-        unsafe {
-            corrupted.flip();
-            get_acc(&instructions);
+        let mut cloned = instructions.clone();
+        cloned[corrupted.0].flip();
+
+        if let Some(acc) = get_acc(&cloned) {
+            println!("Answer: {acc}")
         }
     }
 }
